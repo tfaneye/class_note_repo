@@ -1,0 +1,12 @@
+Installing Git for Linux:
+sudo apt-get update
+sudo apt-get install git
+
+Configuring Git
+git config --global user.name "user_name"
+git config --global user.email "email_address"
+
+Generating SSH Key:
+ssh-keygen -t rsa -C "email_address"
+cat ~/ .ssh/id_rsa.pub
+xclip -sel clip < ~/ .ssh/id_rsa.pub (// this command copy the key to clipboard. May need to install xclip: sudo apt install xclip)

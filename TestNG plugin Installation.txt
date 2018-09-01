@@ -1,0 +1,15 @@
+Install TestNG Eclipse Plug-in
+
+Start Eclipse and select Help, Install New Software.
+The Install page opens.
+Click Add.
+The Add Site page opens.
+Enter TestNG in the Name field, enter http://beust.com/eclipse in the Location field, and click OK.
+Information for the plug-in displays in the table on the Install dialog.
+Expand TestNG, select org.testng.eclipse, and click Next twice.
+The Review Licenses page opens.
+Accept the License Agreement and click Finish.
+TestNG installs, and Eclipse asks for the permission to restart.
+Click Yes.
+
+Eclipse restarts, and the TestNG plug-in is now available for use.
