@@ -4,23 +4,24 @@ Step1: Open the Terminal (Ctrl + Alt + T) and enter the following command to cha
 	cd /opt/
 
 Step2: Enter the command given below to extract the IntelliJ IDEA from ~/Downloads directory. If your downloaded file is in any other directory, replace the last parameter by the actual file path
-	sudo tar -xvzf ~/Downloads/ideaIU-14.1.2.tar.gz
+	sudo tar -xvzf ~/Downloads/ideaIC-2018.2.3.tar.gz
 
 Open another Terminal (Ctrl + Alt + T) and enter the following command to create a shortcut file for IntelliJ
-	gedit intellij-idea.desktop
+	sudo gedit intellij-idea.desktop
 
-Step4: In the opened gedit, copy and paste the following text. If your IntelliJ IDEA version is different, according to your version change the 	Exec location the Icon path:
-	[Desktop Entry]
-	Name=IntelliJ IDEA
-	Type=Application
-	Exec=/opt/idea-IU-141.713.2/bin/idea.sh
-	Terminal=false
-	Icon=/opt/idea-IU-141.713.2/bin/idea.png
-	Comment=Integrated Development Environment
-	NoDisplay=false
-	Categories=Development;IDE;
-	Name[en]=IntelliJ IDEA
-	Name[en_US]=IntelliJ IDEA
+Step4: In the opened gedit, copy and paste the following text. If your IntelliJ IDEA version is different, according to your version change the Exec location and the Icon path:
+
+[Desktop Entry]
+Name=IntelliJ IDEA
+Type=Application
+Exec=/opt/idea-IC-182.4323.46/bin/idea.sh
+Terminal=false
+Icon=/opt/idea-IC-182.4323.46/bin/idea.png
+Comment=Integrated Development Environment
+NoDisplay=false
+Categories=Development;IDE
+Name[en]=IntelliJ IDEA
+Name[en_US]=IntelliJ IDEA
 
 Step5: Save and close the gedit
 
