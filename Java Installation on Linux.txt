@@ -1,39 +1,51 @@
 Installation of Java on Linux
 =============================
 
-1)Completely remove the OpenJDK/JRE from your system
+1) Completely remove the OpenJDK/JRE from your system
 	sudo apt-get purge openjdk-\*
-2)Create a directory to hold your Oracle Java JDK/JRE binaries.
+
+2) Create a directory to hold your Oracle Java JDK/JRE binaries.
 	sudo mkdir -p /usr/local/java
-3)Download java binaries from the website
-4)Copy the Oracle Java binaries into the /usr/local/java directory.
+
+3) Download java binaries from the website
+
+4) Copy the Oracle Java binaries into the /usr/local/java directory.
 	sudo cp -r <java_binaries> /usr/local/java
-5)Unpack the compressed Java binaries, in the directory /usr/local/java
+
+5) Unpack the compressed Java binaries, in the directory /usr/local/java
 	cd /usr/local/java
 	sudo tar xvzf <java_binaries>
-6)Double-check your directories.
+
+6) Double-check your directories.
 	ls -a
-7)Edit the system PATH file /etc/profile and add the following system variables to your system path.
+
+7) Edit the system PATH file /etc/profile and add the following system variables to your system path.
 	sudo gedit /etc/profile
-8)Scroll down to the end of the file using your arrow keys and add the following lines below to 
-  the end of your /etc/profile file. Then save and close your profilefile:
-	JAVA_HOME=/usr/local/java/jdk1.8.0.181
-	JRE_HOME=$JAVA_HOME/jre
-	PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
-	export JAVA_HOME
-	export JRE_HOME
-	export PATH
-9)Inform your Ubuntu Linux system where your Oracle Java JDK/JRE is located.
+
+8) Scroll down to the end of the file using your arrow keys and add the following lines below to 
+   the end of your /etc/profile file. Then save and close your profilefile:
+
+JAVA_HOME=/usr/local/java/jdk1.8.0.181
+JRE_HOME=$JAVA_HOME/jre
+PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
+export JAVA_HOME
+export JRE_HOME
+export PATH
+
+9) Inform your Ubuntu Linux system where your Oracle Java JDK/JRE is located.
 	sudo update-alternatives --install "/usr/bin/java" "java" "/usr/local/java/jdk1.8.0.181/jre/bin/java" 1
 	sudo update-alternatives --install "/usr/bin/java" "java" "/usr/local/java/jdk1.8.0.181/bin/java" 1
 	sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/local/java/jre1.8.0.181/bin/javaws" 1
-10)Inform your Ubuntu Linux system that Oracle Java JDK/JRE must be the default Java.
+
+10) Inform your Ubuntu Linux system that Oracle Java JDK/JRE must be the default Java.
 	sudo update-alternatives --set java /usr/local/java/jdk1.8.0.181/jre/bin/java
 	sudo update-alternatives --set java /usr/local/java/jdk1.8.0.181/bin/java
 	sudo update-alternatives --set javaws /usr/local/java/jdk1.8.0.181/bin/javaws
-11)Reload your system wide PATH /etc/profile by typing the following command:
+
+11) Reload your system wide PATH /etc/profile by typing the following command:
 	. /etc/profile
-12)Check that java is successfully installed
+
+12) Check that java is successfully installed
 	java -version
 	
 	It is recommended that you reboot your Ubuntu now!!
