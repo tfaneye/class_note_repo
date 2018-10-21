@@ -9,7 +9,7 @@ Installing Maven for Linux:
 6) sudo gedit maven.sh
 7) copy the following into the file;
 
-export JAVA_HOME=/usr/local/java/jdk1.8.0_111
+export JAVA_HOME=/usr/local/java/jdk1.8.0_151
 export M2_HOME=/usr/local/apache-maven
 export MAVEN_HOME=/usr/local/apache-maven
 export PATH=${M2_HOME}/bin:${PATH}
