@@ -14,3 +14,8 @@ export M2_HOME=/usr/local/apache-maven
 export MAVEN_HOME=/usr/local/apache-maven
 export PATH=${M2_HOME}/bin:${PATH}
 
+8) source /etc/profile.d/apache-maven.sh
+
+		OR
+
+sudo apt-get install maven
