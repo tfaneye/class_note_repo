@@ -5,10 +5,10 @@ sudo apt-get update
 sudo apt-get install git
 
 Configuring Git
-git config --global user.name "user_name" (Replace user_name with your GitLab user name)
-git config --global user.email "email_address" (Replace email address with your GitLab email address)
+---------------
+git config --global user.name "user_name"  (replace user_name with your GitLab username)
+git config --global user.email "email_address"   (replace email_address with your GitLab email address)
 
-<-------Ignore the lines below--------------->
 Generating SSH Key:
 ssh-keygen -t rsa -C "email_address"
 cat ~/ .ssh/id_rsa.pub
