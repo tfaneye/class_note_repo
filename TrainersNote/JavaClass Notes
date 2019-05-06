@@ -1,0 +1,1482 @@
+Day2
+==============
+Recarp on how to check java version on command line
+
+Explain different ways Exclipse can be customised e.g change font, text and color
+
+Create and run more java program => Use Vehicle or car as Example
+
+Explain where Java project folders are stored
+
+Explain different packages/folders used in java
+
+Explain Naming convention in java
+	---> Case sensitive i.e Strongly typed programming language
+	---> Class Names
+	---> Method Names
+	---> Program File Names - this should match Java Class Name **This is not so important to us as IDE will help
+			up us to create Java Class alway
+
+Show how folders and java class can be created inside the explorer
+STOPPED HERE - 09/08/18
+
+			============
+
+Deep dive into Java class: what it contains
+
+MEMBER CLASS
+------------
+
+===> Java is a collection of objects that communicates by invoking each other's methods <===
+
+Objects have STATES and BEHAVIOURS
+
+States => Instance or field Variables
+
+Behaviours => Methods
+
+Explain special method in java i.e "main" method
+
+Printing output in java i.e System.out.println();
+
+Difference between print(); and println();
+
+the use of \n to escape to new line
+
+
+
+Day3
+==================================
+CREATING OBJECTS:
+Class is a template or blueprint that describes the behaviours or states that object of its type support
+Instantiation...........
+-----------------------------------------------------------------------------
+
+
+JAVA MODIFIERS:
+---------------
+Two Types; -Access Modifiers & Non-Access Modifiers
+
+Modifiers come first in the statement. e.g
+{access modifier} {non-access modifier} {data type} ClassName{},
+{access modifier} {non-access modifier} {data type} variableName,
+{access modifier} {non-access modifier} {data type} methodName(){}
+
+ACCESS MODIRIERS: Access modifiers set access level for Class, Methods and Variables
+
+What are they?: default, public, private, protected
+
+<< Create two packages to demostrate this >>
+
+<< in each package, create different classes and try to access one class contents from another using various
+Access Level Types. >>
+
+NON-ACCESS MODIFIERS:
+
+"static" key word
+
+					public class PeakMilk {
+
+						private String milkName = "milk";
+						private static String companyName = "Cadbury Plc";
+
+						/*public PeakMilk(String milkName) {
+							this.milkName = milkName;
+						}*/
+
+						public String getMilkName(){
+							return milkName;
+						}
+
+						public static String getCompanyName(){
+							return companyName;
+						}
+					}
+
+					===============================================
+
+					public class PeakRunner {
+
+						public static void main(String[] args){
+							PeakMilk milk = new PeakMilk();
+							String name = milk.getMilkName();
+							System.out.println(name);
+
+							String compName = getCompanyName();
+							System.out.println(compName);
+
+							String comp = PeakMilk.getCompanyName();
+
+							System.out.println(comp);
+
+						}
+					}
+
+
+VARIABLES:
+-----------
+1) Local Variables
+2) Class variables (Static Fields) //static modifier is used to tell compiler there is only one copy of
+the variable in existence
+3) Instance Variables (Non-Static Fields)
+
+
+Day4
+===========================================================================================
+Recarp on Java Modifiers
+
+DATA TYPES:
+-----------
+Two-Types;
+1) Primitive data types e.g byte, short, int, long, float, double, boolean, char
+
+2) Reference/Object Data Types - this happens whenever we instantiate a class
+
+
+INTRODUCTION TO GIT 1
+=======================================================================================================
+INTRODUCTION TO GIT 2
+=======================================================================================================
+
+
+Day5
+=====================================================================================================
+Recarp on Data Types
+Recarp on Non-Access Modifiers:
+Constructors
+"static" key word
+
+					public class PeakMilk {
+
+						private String milkName = "milk";
+						private static String companyName = "Cadbury Plc";
+
+						/*public PeakMilk(String milkName) {
+							this.milkName = milkName;
+						}*/
+
+						public String getMilkName(){
+							return milkName;
+						}
+
+						public static String getCompanyName(){
+							return companyName;
+						}
+					}
+
+					===============================================
+
+					public class PeakRunner {
+
+						public static void main(String[] args){
+							PeakMilk milk = new PeakMilk();
+							String name = milk.getMilkName();
+							System.out.println(name);
+
+							String compName = getCompanyName();
+							System.out.println(compName);
+
+							String comp = PeakMilk.getCompanyName();
+
+							System.out.println(comp);
+
+						}
+					}
+
+=====================================================================================
+
+Day6
+=======================================================================
+Conversion from one Data Type to another:
+
+1) From String to int e.g
+	String age = "50";
+
+	System.out.println(age - 2);  ===> this will show compile error
+
+	int realAge = Integer.parseInt(age);
+
+	System.out.println(realAge - 2);
+
+
+2) Repeat the process for double, long, float and Boolean
+	=> for boolean
+	bool boolAge = Boolean.parseBoolean(age);
+
+	System.out.println(boolAge);  =>> The statement will produce false!
+
+
+3) From int to String
+
+	int number = 10;
+
+	System.out.println(number +4);  =>> 14 is expected
+
+	String newNumber = Integer.toString(number);
+
+	System.out.println(newNumber - 3);  =>> compile error is expected
+
+4) Repeat the process for double, long, float and boolean
+
+==========================================================================
+
+JAVA OPERATORS
+----------------
+Operators are used to manipulate Variables.
+
+The following are types of Java Operators
+
+1) Arithmetic Operators { +, -, *, %, ++, -- }
+
+				===================================================
+
+				class ArithmeticDemo {
+
+					public static void main (String[] args) {
+
+						int result = 1 + 2;
+						// result is now 3
+						System.out.println("1 + 2 = " + result);
+						int original_result = result;
+
+						result = result - 1;
+						// result is now 2
+						System.out.println(original_result + " - 1 = " + result);
+						original_result = result;
+
+						result = result * 2;
+						// result is now 4
+						System.out.println(original_result + " * 2 = " + result);
+						original_result = result;
+
+						result = result / 2;
+						// result is now 2
+						System.out.println(original_result + " / 2 = " + result);
+						original_result = result;
+
+						result = result + 8;
+						// result is now 10
+						System.out.println(original_result + " + 8 = " + result);
+						original_result = result;
+
+						result = result % 7;
+						// result is now 3
+						System.out.println(original_result + " % 7 = " + result);
+					}
+				}
+
+				======================================================
+				class ConcatDemo {
+					public static void main(String[] args){
+						String firstString = "This is";
+						String secondString = " a concatenated string.";
+						String thirdString = firstString+secondString;
+						System.out.println(thirdString);
+					}
+				}
+
+				=======================================================
+				class UnaryDemo {
+
+					public static void main(String[] args) {
+
+						int result = +1;
+						// result is now 1
+						System.out.println(result);
+
+						result--;
+						// result is now 0
+						System.out.println(result);
+
+						result++;
+						// result is now 1
+						System.out.println(result);
+
+						result = -result;
+						// result is now -1
+						System.out.println(result);
+
+						boolean success = false;
+						// false
+						System.out.println(success);
+						// true
+						System.out.println(!success);
+					}
+				}
+
+======================================================================================
+
+Day7
+==================================================================
+2) Relational Operators { ==, !=, >, <, >=, <= }
+
+				class ComparisonDemo {
+
+					public static void main(String[] args){
+						int value1 = 1;
+						int value2 = 2;
+						if(value1 == value2)
+							System.out.println("value1 == value2");
+						if(value1 != value2)
+							System.out.println("value1 != value2");
+						if(value1 > value2)
+							System.out.println("value1 > value2");
+						if(value1 < value2)
+							System.out.println("value1 < value2");
+						if(value1 <= value2)
+							System.out.println("value1 <= value2");
+					}
+				}
+
+				==============================================================
+
+3) Logical Operators { &&, ||, !, }
+
+				class ConditionalDemo1 {
+
+					public static void main(String[] args){
+						int value1 = 1;
+						int value2 = 2;
+						if((value1 == 1) && (value2 == 2))
+							System.out.println("value1 is 1 AND value2 is 2");
+						if((value1 == 1) || (value2 == 1))
+							System.out.println("value1 is 1 OR value2 is 1");
+					}
+				}
+
+4) The Assignment Operators { = }
+
+================================================================================
+
+
+Day8
+==========================================================================
+String Operators
+---------------
+These are customs methods (accessor methods) used to obtain information about an object.
+that come with java for string manipulations
+
+1) lenght();  //This prints out the number of characters in a string
+
+				String greeting = "Hello World!";
+						 int greet = name.length();
+						System.out.println(greet);
+
+2) contact();
+
+3) Uppercase()
+        String upper = greeting.toUpperCase();
+        System.out.println(upper);
+
+4) contentEquals()
+        boolean gt = greeting.contentEquals("Hello World!");
+        System.out.println(gt);
+
+5) replaceFirst()
+		String money = "£40";
+        String newMoney = money.replaceFirst("£", "");
+        System.out.println(newMoney);
+
+
+CONTROL FLOW STATEMENTS
+--------------------
+From the name, they control the flow of statement execution.
+
+Usual statements are executed from top to bottom line by line.
+
+Broadly categorised into 3:
+
+1) Decision-Making Statements: { if, if-else, switch }
+2) Looping Statements { for, while, do-while }
+3) Branching Statements { break, continue, return }
+
+
+1) Decision-Making Statements: { if, if-else, switch }
+
+					public void applyBrakes() {
+						if (isMoving) {
+							currentSpeed--;
+						} else {
+							System.err.println("The bicycle has already stopped!");
+						}
+					}
+
+					=======================================================================
+
+					public class IfElseDemo {
+						public static void main(String[] args) {
+
+							int testscore = 76;
+							char grade;
+
+							if (testscore >= 90) {
+								grade = 'A';
+							} else if (testscore >= 80) {
+								grade = 'B';
+							} else if (testscore >= 70) {
+								grade = 'C';
+							} else if (testscore >= 60) {
+								grade = 'D';
+							} else {
+								grade = 'F';
+							}
+							System.out.println("Grade = " + grade);
+						}
+					}
+
+=====================================================================================================
+
+Day9
+Control Flow Cont's (Part2)
+==============================
+A switch statement allows a variable to be tested to equality against a list of values. Each value is called a "case"
+
+					public class SwitchDemo {
+						public static void main(String[] args) {
+
+							int month = 8;
+							String monthString;
+
+							switch (month) {
+								case 1:  monthString = "January";
+										 break;
+								case 2:  monthString = "February";
+										 break;
+								case 3:  monthString = "March";
+										 break;
+								case 4:  monthString = "April";
+										 break;
+								case 5:  monthString = "May";
+										 break;
+								case 6:  monthString = "June";
+										 break;
+								case 7:  monthString = "July";
+										 break;
+								case 8:  monthString = "August";
+										 break;
+								case 9:  monthString = "September";
+										 break;
+								case 10: monthString = "October";
+										 break;
+								case 11: monthString = "November";
+										 break;
+								case 12: monthString = "December";
+										 break;
+								default: monthString = "Invalid month";
+										 break;
+							}
+							System.out.println(monthString);
+						}
+					}
+
+					=======>>> Assignment: write if statement to display the names of the month above
+		Solution:
+					int month = 8;
+					if (month == 1) {
+						System.out.println("January");
+					} else if (month == 2) {
+						System.out.println("February");
+					}else if (month == 3) {
+						System.out.println("March");
+					}else if (month == 4) {
+						System.out.println("April");
+					}else if (month == 5) {
+						System.out.println("May");
+					}else if (month == 6) {
+						System.out.println("June");
+					}else if (month == 7) {
+						System.out.println("July");
+					}else if (month == 8) {
+						System.out.println("August");
+					}else if (month == 9) {
+						System.out.println("September");
+					}else if (month == 10) {
+						System.out.println("October");
+					}else if (month == 11) {
+						System.out.println("November");
+					}else if (month == 12) {
+						System.out.println("December");
+					}
+
+An if-then-else statement can test expressions based on ranges of values or conditions, whereas a switch statement
+tests expressions based only on a single integer, enumerated value, or String object.
+
+2) Looping Statements { while, do-while, for }
+
+==> While : The while statement continually executes a block of statements while a particular condition is true
+
+					class WhileDemo {
+						public static void main(String[] args){
+							int count = 1;
+							while (count < 11) {
+								System.out.println("Count is: " + count);
+								count++;
+							}
+						}
+					}
+
+		//Example of infinite loop using While statement
+					int  w = 10;
+					while(w > 1){
+					sout(w);   // this will take the programe to infinite loop
+					r--;  //or r = r - 1;
+					}
+
+					===================================================================
+===> do-while
+					class DoWhileDemo {
+						public static void main(String[] args){
+							int count = 1;
+							do {
+								System.out.println("Count is: " + count);
+								count++;
+							} while (count < 11);
+						}
+					}
+
+					================================================================
+
+===> for: The "for" statement iterates over a range of values and then produce an output
+
+					for Syntax:
+
+					for (initialization; termination; increment) {
+						//statement(s)
+					}
+
+					class ForDemo {
+						public static void main(String[] args){
+							 for(int i=1; i<11; i++){
+								  System.out.println("Count is: " + i);
+							 }
+						}
+					}
+					===================================================================
+					class EnhancedForDemo {
+						public static void main(String[] args){
+							 int[] numbers =
+								 {1,2,3,4,5,6,7,8,9,10};
+							 for (int item : numbers) {
+								 System.out.println("Count is: " + item);
+							 }
+						}
+					}
+========================================================================================
+
+Day10
+Control Flow Part3 - Taking Input In Java - Creating, Writing, and Reading File In Java (IO) Part1
+=============================================================================================
+
+3) Branching Statements { break, continue, return }
+
+					class BreakDemo {
+						public static void main(String[] args) {
+
+							int[] arrayOfInts = { 32, 87, 3, 589, 12, 1076, 2000, 8, 622, 127 };
+
+							int searchfor = 12;
+
+							int i;
+							boolean foundIt = false;
+
+							for (i = 0; i < arrayOfInts.length; i++) {
+								if (arrayOfInts[i] == searchfor) {
+									foundIt = true;
+									break;
+								}
+							}
+
+							if (foundIt) {
+								System.out.println("Found " + searchfor + " at index " + i);
+							} else {
+								System.out.println(searchfor + " not in the array");
+							}
+						}
+					}
+
+					==========================================================================
+
+					class BreakWithLabelDemo {
+						public static void main(String[] args) {
+
+							int[][] arrayOfInts = {
+								{ 32, 87, 3, 589 },
+								{ 12, 1076, 2000, 8 },
+								{ 622, 127, 77, 955 }
+							};
+							int searchfor = 12;
+
+							int i;
+							int j = 0;
+							boolean foundIt = false;
+
+						search:
+							for (i = 0; i < arrayOfInts.length; i++) {
+								for (j = 0; j < arrayOfInts[i].length; j++) {
+									if (arrayOfInts[i][j] == searchfor) {
+										foundIt = true;
+										break search;
+									}
+								}
+							}
+
+							if (foundIt) {
+								System.out.println("Found " + searchfor + " at " + i + ", " + j);
+							} else {
+								System.out.println(searchfor + " not in the array");
+							}
+						}
+					}
+		=========================================================================
+Example of using continue;
+
+		for (int j=0; j<=6; j++)
+	{
+           if (j==4)
+           {
+	      continue;
+	   }
+
+           System.out.print(j+" ");
+	}
+
+------------------------------------------
+
+					class ContinueDemo {
+						public static void main(String[] args) {
+==> Getting the numbers of s in mississipi
+
+						String word = "mississipi";
+						int len = word.length();
+						int numSs = 0;
+						for (int i=0; i < len; i++){
+							//we only interested in s
+							if (word.charAt(i) != 's')
+								continue;
+
+							//number of s increment
+							numSs++;
+						}
+						System.out.println("there are " + numSs + "s in " + word);
+
+						----------------------------------------------------------------
+
+							String searchMe = "peter piper picked a " + "peck of pickled peppers";
+							int max = searchMe.length();
+							int numPs = 0;
+
+							for (int i = 0; i < max; i++) {
+								// interested only in p's
+								if (searchMe.charAt(i) != 'p')
+									continue;
+
+								// process p's
+								numPs++;
+							}
+							System.out.println("Found " + numPs + " p's in the string.");
+						}
+					}
+==============================================================================
+
+Taking Input in Java
+--------------------
+
+Using BufferedReader:
+
+You need two line of codes to do this;
+
+InputStreamReader isr = new InputStreamReader(System.in);
+BufferedReader br = new BufferedReader(isr);
+
+e.g
+System.out.println("What is your name?");
+InputStreamReader isr = new InputStreamReader(System.in);
+BufferedReader br = new BufferedReader(isr);
+
+String name = br.readLine();
+
+System.out.println(name);
+
+
+This code can be used to design a simple calculator. when taking integers, "read();"
+ method can be used to take integers
+
+###########################################################################
+
+Creating File, Writing Into File and Reading From File
+-----------------------------------------------------
+public void createMyFile(){
+
+       // String fileName = "/home/inet-tech/ProjectRepos/lion_repo/JavaClassProjects/test_data/file.txt";
+        String rootPath = System.getProperty("user.dir");
+        String filePath =  rootPath.concat("/test_data/file.txt");
+        File file = new File(filePath);
+        try {
+            file.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+	------------------------------------------------------------
+
+//Method 1
+    //this method writes into already created file
+    public void writeIntoFile(){
+
+        try {
+            FileWriter fileWriter = new FileWriter(file);
+            fileWriter.write("This is our first writing into file");      //("Java Web Automation \nBatch 2018");
+            fileWriter.flush();
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+===============================================================================
+Day11
+
+Creating, Writing and Reading File Part2
+===================================================
+
+//Method 2
+    //writing an arrays of strings
+    public void writingArraysOnNumber(){
+        String[] texts = {"John", "James", "Ben"};
+
+        try {
+            fileWriter = new FileWriter(file);
+
+            for(String text : texts)
+            fileWriter.write(text+"\n");
+            fileWriter.flush();
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+==============================================================================
+Reading from Text File
+-----------------
+1) FileReader and BufferedReader
+2) FileInputStream
+
+
+public static void main(String[] args) {
+
+        // The name of the file to open.
+        String fileName = "/home/inet-tech/ProjectRepos/lion_repo/PracticeJavaLang/src/temp.txt";
+
+        // This will reference one line at a time
+        String line = null;
+
+        try {
+            // FileReader reads text files in the default encoding.
+            FileReader fileReader = new FileReader(fileName);
+
+            // Always wrap FileReader in BufferedReader.
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            //String textFile = bufferedReader.readLine();
+
+            while((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+            }
+
+            // Always close files.
+            bufferedReader.close();
+        }
+        catch(FileNotFoundException ex) {
+            System.out.println("Unable to open file '" + fileName + "'");
+        }
+        catch(IOException ex) {
+            System.out.println("Error reading file '" + fileName + "'");
+            // Or we could just do this:
+            // ex.printStackTrace();
+        }
+    }
+-------------------------------------------------------------------------------
+Read from dot properties files
+-------------------------------
+public class ReadingFile {
+
+    private static FileInputStream fis;
+    private static Properties prop;
+
+
+    public static void main(String[] args) throws IOException {
+        fis = new FileInputStream(System.getProperty("user.dir") + "/src/resources/env.properties");
+        prop = new Properties();
+        prop.load(fis);
+        System.out.println(prop);
+    }
+}
+
+===============================================================================
+
+Day12    {Create another Repo on GitLab, saphire-Repo
+(Project name = JavaAutoProject)}
+OOP Concepts
+	------------------------------------------------------------
+
+1) Encapsulation
+2) Inheritance
+3) Polymorphism
+4) Abstraction
+
+1) ENCAPSULATION:
+
+	Getter and Setter methods
+		public class ElectricCar {
+
+			private String carName = "Passat";
+			private double carPrice = 56000.00;
+			private int carAge = 3;
+			private boolean hasRegistrationPaper = true;
+
+			public String getCarName() {
+				return carName;
+			}
+
+			public void setCarName(String carName) {
+				this.carName = carName;
+			}
+
+			public double getCarPrice() {
+				return carPrice;
+			}
+
+			public void setCarPrice(double carPrice) {
+				this.carPrice = carPrice;
+			}
+
+			public int getCarAge() {
+				return carAge;
+			}
+
+			public void setCarAge(int carAge) {
+				this.carAge = carAge;
+			}
+
+			public boolean isHasRegistrationPaper() {
+				return hasRegistrationPaper;
+			}
+
+			public void setHasRegistrationPaper(boolean hasRegistrationPaper) {
+				this.hasRegistrationPaper = hasRegistrationPaper;
+			}
+		}
+
+	============================================================================
+
+	Using Constructor as a setter
+	----------------------------
+
+	public class ConstructorAsASetter {
+
+    private final ElectricCar car;
+
+    public ConstructorAsASetter(ElectricCar car) {
+
+        this.car = car;
+    }
+
+    public void displayCarName(){
+        if(car.getCarName().contains("Passat")){
+            System.out.println("This is my car");
+        }
+
+        int carAge = car.getCarAge();
+        System.out.println(carAge);
+
+        //set new car age
+        car.setCarAge(5);
+
+        //get new car age
+        int newAge = car.getCarAge();
+        System.out.println(newAge);
+    }
+}
+
+	============================================================================
+	RunnerClass for getter and setter
+					----------------
+	public static void main(String[] args) {
+
+        ElectricCar car = new ElectricCar();
+        double myCarPrice = car.getCarPrice();
+        System.out.println(myCarPrice);
+
+        car.setCarPrice(60000);
+        double myNewCarPrice = car.getCarPrice();
+        if(myNewCarPrice == 56000){
+            System.out.println("Old Car price");
+        }
+        else if(myNewCarPrice == 60000){
+            System.out.println("New car price is "+ myNewCarPrice);
+        }
+        else {
+            System.out.println("This price has not been defined");
+        }
+
+		  //using constructor
+		ConstructorAsASetter conSetter = new ConstructorAsASetter(car);
+        conSetter.displayCarName();
+    }
+
+	============================================================================
+	Day13
+	=====================================================================
+
+2) INHERITANCE:
+A very important fact to remember is t hat Java only supports single inheritance.
+i.e public class extends Animal, Mammal{} is not possible in java
+
+	multiple inheritance: e.g,
+		--> 2-level inheritance  e.g Dove -> Bird
+		--> 3-level inheritance e.g Bird -> Animal
+
+
+		public class Dove extends Animal{
+
+			private boolean hasSkin = true;
+			private String doveName = "Mountin Dove";
+			private int numOfLegs = 2;
+
+			public boolean isHasSkin() {
+				return hasSkin;
+			}
+
+			public void setHasSkin(boolean hasSkin) {
+				this.hasSkin = hasSkin;
+			}
+
+			public String getDoveName() {
+				return doveName;
+			}
+
+			public void setDoveName(String doveName) {
+				this.doveName = doveName;
+			}
+
+			public int getNumOfLegs() {
+				return numOfLegs;
+			}
+
+			public void setNumOfLegs(int numOfLegs) {
+				this.numOfLegs = numOfLegs;
+			}
+
+
+			//Making Dove class to implement attribute from Animal class
+			public boolean getEyeStatus(){
+				return hasEyes;
+			}
+		}
+
+		===========================================================================
+		Day14
+		======================================================
+3 POLYMORPHISM:
+	Two Types:
+		1) Overloading
+		2) Overriding
+
+		1) Overloading
+
+1a) example of Overloading by changing number of Arg Parameter in a method
+    public void drinkTea(){
+        System.out.println("No parameter");
+    }
+
+    public void drinkTea(String teaName){
+        System.out.println("Takes one parameter");
+    }
+
+    public void drinkTea(String teaName, String shopName){
+        System.out.println("Takes two parameters");
+    }
+
+    public void drinkTea(String teaName, String shopName, String shopOwner){
+        System.out.println("Takes three parameters");
+    }
+
+
+//example of Overloading by changing the datatype
+    public void drinkTea(int teaNumber){
+        System.out.println("No parameter");
+    }
+
+    public void drinkTea(int teaNumber, int teaPrice){
+        System.out.println("two parameter");
+    }
+
+    public void drinkTea(int teaNumber, int teaPrice, double teaCode){
+        System.out.println("three parameter");
+    }
+
+//example of Overloading by using customised datatype
+    public void drinkTea(SalesGirl salesGirlName){
+        System.out.println("customised parameter "+salesGirlName);
+    }
+
+	-----------------------------------------
+	public static void main(String[] args){
+
+        SalesGirl salesGirl = new SalesGirl();
+        //salesGirl.setSalesGirlName(Tunde);
+        SalesGirl name = salesGirl.getSalesGirlName();
+
+        Tea greenTea = new Tea();
+        greenTea.drinkTea(name);
+    }
+--------------------------------------------------------------------
+
+1b) example of Overloading by changing number of Arg Parameter in a Constructor
+    public Tea() {
+        this.teaName = "Lipton";
+        this.teaNumber = 5;
+        this.teaPrice = 50.0;
+    }
+
+    public Tea(String teaName) {
+        this.teaName = teaName;
+        this.teaNumber = 5;
+        this.teaPrice = 50.0;
+    }
+
+    public Tea(String teaName, int teaNumber) {
+        this.teaName = teaName;
+        this.teaNumber = teaNumber;
+        this.teaPrice = 50.0;
+    }
+
+    public Tea(String teaName, int teaNumber, double teaPrice) {
+        this.teaName = teaName;
+        this.teaNumber = teaNumber;
+        this.teaPrice = teaPrice;
+    }
+
+		----------------------------------------------------------------------------
+		=====================================================================
+
+		Day15
+		==========================================
+	2) Overriding -->> Combines inheritance with polymorphism. Overriding brings into focus the relationship bewteen
+		'States' and 'Behaviours'
+
+		public class Pen {
+
+	    //Example of Overriding
+
+	    protected long penNumber;
+
+	    public Pen(long penNumber) {
+	        this.penNumber = penNumber;
+	    }
+
+	    public void writeLetter(){
+	        System.out.println("I can write with pen from Parent with serial number: " +penNumber);
+	    }
+
+	    public void writeLetter(String testName){
+	        System.out.println(testName);
+	    }
+	}
+
+//create another class, BicPen to inherit "Pen"
+
+	public class BicPen extends Pen {
+
+   // private long penNumber = 689L;
+
+    public BicPen(long penNumber) {
+        super(penNumber);
+    }
+
+//Examples of Overriding & Overloading
+//writeLetter method is also present in Parent class, Pen
+
+    public void writeLetter(){
+            super.writeLetter();
+            System.out.println("I can write with pen from Child with serial number: " +penNumber);
+    }
+
+    public void writeLetter(String testName){
+            super.writeLetter(testName);
+            System.out.println(testName);
+    }
+}
+
+----------------------------------------------------------------------
+4) Abstraction
+
+public abstract class Company {
+    private double basicPay;
+    private double bonus;
+    private int numOfDaysWorked;
+    private String employeeName;
+
+    public Company(double basicPay, double bonus, int numOfDaysWorked, String employeeName) {
+        this.basicPay = basicPay;
+        this.bonus = bonus;
+        this.numOfDaysWorked = numOfDaysWorked;
+        this.employeeName = employeeName;
+    }
+
+    public double calculatePay(){
+        return 0.0;
+    }
+
+    public double getBasicPay() {
+        return basicPay;
+    }
+
+    public void setBasicPay(double basicPay) {
+        this.basicPay = basicPay;
+    }
+
+    public double getBonus() {
+        return bonus;
+    }
+
+    public double computeBonus(){
+        if((numOfDaysWorked >=1) && (numOfDaysWorked <= 5) ){
+            bonus = 2.0;
+        }else if((numOfDaysWorked >= 6) && (numOfDaysWorked <= 10)){
+            bonus = 5.0;
+        }else if((numOfDaysWorked >= 11) && (numOfDaysWorked <= 20)){
+            bonus = 10.0;
+        }else if((numOfDaysWorked >= 21) && (numOfDaysWorked <= 30)){
+            bonus = 25.0;
+        }
+
+        return bonus;
+    }
+
+    public void setBonus(double bonus) {
+
+        this.bonus = bonus;
+    }
+
+    public int getNumOfDaysWorked() {
+        return numOfDaysWorked;
+    }
+
+    public void setNumOfDaysWorked(int numOfDaysWorked) {
+        this.numOfDaysWorked = numOfDaysWorked;
+    }
+
+    public String getEmployeeName() {
+        return employeeName;
+    }
+
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
+    }
+}
+------------------------------------------------------------------
+public class Employee extends Company{
+
+    //private int daysWorked;
+
+    public Employee(double basicPay, double bonus, int numOfDaysWorked, String employeeName) {
+        super(basicPay, bonus, numOfDaysWorked, employeeName);
+
+        //setDaysWorked(daysWorked);
+    }
+
+    /*public int getdaysWorked() {
+        return daysWorked;
+    }
+
+    public void setDaysWorked(int numOfDaysWorked) {
+        if(numOfDaysWorked >= 1){
+            daysWorked = numOfDaysWorked;
+        }
+    }*/
+
+    public double calculatePay(){
+        double myBasicPay = getBasicPay();
+        int daysWorked = getNumOfDaysWorked();
+
+        double myBonus = computeBonus();
+
+        double mySalary = (myBasicPay * daysWorked) + myBonus;
+
+        return mySalary;
+    }
+}
+
+==================================================================================================================
+Day16
+Arrays:
+=======================================
+An array is a collection of variables of the same type.
+Arrays are used to store a coolection of data.
+
+Declaring, Creating, Initializing, and Accessing an Array
+
+Method1:
+int[] anArray;						//Declaring and Array
+
+anArray = new int[5];			//Creating an Array
+
+anArray[0] = 100;
+anArray[1] = 200;					//initialization
+etc
+
+System.out.println("Element 1 at index 0: " + anArray[0]);
+
+Method2:
+Alternatively, you can use the shortcut syntax to create and initialize an array:
+
+int[] anArray = { 100, 200, 300,400, 500, 600, 700, 800, 900, 1000 };
+
+e.g
+public void showMyStudentAges(){
+
+studentAges = new int[5];
+        studentAges[0] = 23;
+        studentAges[1] = 25;
+        studentAges[2] = 30;
+        studentAges[3] = 20;
+        studentAges[4] = 35;
+
+        for (int studentAge:
+                studentAges) {
+            if(studentAge >= 30){
+                System.out.println("Old Student, your age is: "+ studentAge);
+            }
+            else {
+                System.out.println("Young student, your age is: "+ studentAge);
+            }
+            //System.out.println(studentAge);
+        }
+
+    }
+
+
+===========================================================================
+Day17
+======================
+Interface
+
+An interface is a collection of abstract methods.
+In the Java programming language, an interface is a reference type.
+
+An interface is similar to a class in the following ways:
+	=> An interface can contain any number of methods.
+	=> An interface is written in a file with a .java extension, with the name of the interface matching
+		 the name of the file.
+	=> The bytecode of an interface appears in a .class file.
+	=> Interfaces appear in packages, and their corresponding bytecode file must be in a directory
+		 structure that matches the package name.
+
+However, an interface is different from a class in several ways, including:
+	=> You cannot instantiat e an interface.
+	=> An interface does not contain any constructors.
+	=> All of the methods in an interface are abstract .
+	=> An interface cannot contain instance fields. The only fields that can appear in an interface must
+		 be declared both static and final.
+	=> An interface is not extended by a class; it is implemented by a class.
+	=> An interface can extend multiple interfaces.
+
+	Declaring interfaces:
+
+	public interface TimeClient {
+
+    void setTime(int hour, int minute, int second);
+    void setDate(int day, int month, int year);
+    void setDateAndTime(int day, int month, int year, int hour, int minute, int second);
+    LocalDateTime getLocalDateTime();
+}
+
+----------------------------------------------------------
+
+public class SimpleTimeClient implements TimeClient {
+
+    private LocalDateTime dateAndTime;
+
+    public SimpleTimeClient() {
+        dateAndTime = LocalDateTime.now();
+    }
+
+    public void setTime(int hour, int minute, int second) {
+        LocalDate currentDate = LocalDate.from(dateAndTime);
+        LocalTime timeToSet = LocalTime.of(hour, minute, second);
+        dateAndTime = LocalDateTime.of(currentDate, timeToSet);
+    }
+
+    public void setDate(int day, int month, int year) {
+        LocalDate dateToSet = LocalDate.of(day, month, year);
+        LocalTime currentTime = LocalTime.from(dateAndTime);
+        dateAndTime = LocalDateTime.of(dateToSet, currentTime);
+    }
+
+    public void setDateAndTime(int day, int month, int year, int hour, int minute, int second) {
+        LocalDate dateToSet = LocalDate.of(day, month, year);
+        LocalTime timeToSet = LocalTime.of(hour, minute, second);
+        dateAndTime = LocalDateTime.of(dateToSet, timeToSet);
+    }
+
+    public LocalDateTime getLocalDateTime() {
+        return dateAndTime;
+    }
+
+    public String toString() {
+        return dateAndTime.toString();
+    }
+
+    public static void main(String... args) {
+        TimeClient myTimeClient = new SimpleTimeClient();
+        System.out.println(myTimeClient.toString());
+    }
+}
+
+============================================================================
+
+Day 18
+Enum Types
+==========
+An enum is a special type of data type which is basically a collection (set) of constants
+
+Example using if statements:
+
+public enum Directions{
+	  EAST,
+	  WEST,
+	  NORTH,
+	  SOUTH
+}
+
+public class EnumDemo
+{
+   public static void main(String args[]){
+	Directions dir = Directions.NORTH;
+	if(dir == Directions.EAST) {
+	    System.out.println("Direction: East");
+	} else if(dir == Directions.WEST) {
+	    System.out.println("Direction: West");
+	  } else if(dir == Directions.NORTH) {
+	      System.out.println("Direction: North");
+  	    } else {
+		System.out.println("Direction: South");
+	      }
+   }
+}
+
+--------------------------------------------------------------------------
+Example using Case statements:
+
+public class EnumDemo
+{
+   Directions dir;
+   public EnumDemo(Directions dir) {
+      this.dir = dir;
+   }
+   public void getMyDirection() {
+     switch (dir) {
+       case EAST:
+          System.out.println("In East Direction");
+          break;
+
+       case WEST:
+          System.out.println("In West Direction");
+          break;
+
+       case NORTH:
+          System.out.println("In North Direction");
+          break;
+
+       default:
+          System.out.println("In South Direction");
+          break;
+     }
+   }
+
+    public static void main(String[] args) {
+        EnumDemo obj1 = new EnumDemo(Directions.EAST);
+        obj1.getMyDirection();
+        EnumDemo obj2 = new EnumDemo(Directions.SOUTH);
+        obj2.getMyDirection();
+    }
+}
+
+===============================================================================
+
+Day19
+Handling Exceptions
+=====================
+We will be talking about -------
+1) Throwable
+2) Exceptions
+3) Errors
+4) throws
+5) throw
+
+
+public class ExcepTest{
+
+		public static void main(String args[]){
+					try{
+							int a[] = new int[2];
+							System.out.println("Access element at index three :" + a[3]);
+					}catch(ArrayIndexOutOfBoundsException e){
+							System.out.println("Exception thrown :" + e);
+					}
+					System.out.println("Out of the block");
+		}
+}
+==============================================
+
+//Example 2 Custom Exception (Difference btw throw and throws)-------------------------
+
+public class ExceptionDemo{
+
+    private double balance;
+
+    public ExceptionDemo()
+    {
+        //this.number = number;
+    }
+    public void deposit(double initialDeposit)
+    {
+        balance += initialDeposit;
+    }
+
+    public void withdraw(double withdrawAmount) throws TundeException {
+        if(withdrawAmount <= balance)
+        {
+            balance -= withdrawAmount;
+        }
+        else
+        {
+            double newBal = withdrawAmount - balance;
+            throw new TundeException(newBal);
+        }
+    }
+
+
+    public static void main(String args[]) throws TundeException {
+
+        ExceptionDemo demo = new ExceptionDemo();
+        System.out.println("Depositing £200...");
+        demo.deposit(200.00);
+        try
+        {
+            System.out.println("\nWithdrawing £20...");
+            demo.withdraw(50.00);
+            System.out.println("\nWithdrawing £400...");
+            demo.withdraw(400.00);
+        }catch(TundeException e)
+        {
+            System.out.println("\nSorry, but you are short £" + e.getAmount());
+            System.out.println("\n" + e.getCause());
+            System.out.println("\n" + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+}

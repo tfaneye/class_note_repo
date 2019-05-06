@@ -1,0 +1,32 @@
+BDD - Behaviour Driven Development
+
+  Epic
+      Feature
+            User Story
+              As a [role]
+              I want to [action]
+              So I can [reason]
+                    Scenarios (Test Case)
+                    G
+                    T
+                    W
+
+Cucumber-JVM
+  Dependencies
+    -Selenium
+    -JUnit
+    1)-cucumber-java
+    3)-cucumber-junit
+    2)-cucumber-core
+    4)-cucumber-jvm-deps
+    -gherkin (optional)
+
+Examples of storing data in Feature file
+  -parameter
+  
+  -in-line datatable
+    List<List<String>> tableInfo = table.raw();
+    String item = tableInfo.get(1).get(0);  //getting item at row 2 and column 1
+    String price = tableInfo.get(1).get(1); //getting price at row 2 and column 2
+
+  -Example datatable
