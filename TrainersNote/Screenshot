@@ -1,0 +1,47 @@
+TestNG Screenshot
+==================
+public class Screenshot extends SharedBrowser {
+
+
+
+    public void snap(String name){
+
+        Calendar calender = new GregorianCalendar();
+        int year = calender.get(Calendar.YEAR);
+        int sec = calender.get(Calendar.SECOND);
+        int min = calender.get(Calendar.MINUTE);
+        int date = calender.get(Calendar.DATE);
+        int day = calender.get(Calendar.HOUR_OF_DAY);
+        int month = calender.get(Calendar.MONTH);
+
+        String timeStamp = year+"-"+(month +1)+"-"+date+"-"+day+"-"+min+"-"+sec;
+        String systemPath = System.getProperty("user.dir");
+        String fullPath = systemPath+"\\screenshots\\"+name + timeStamp;
+
+
+        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(scrFile, new File(fullPath+".png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+====================================================================
+
+public void takeShot(String name)  {
+        Screenshot screenshot = new Screenshot();
+        screenshot.snap(name);
+    }
+
+======================================================================
+
+
+@AfterMethod
+public void cleanUpTest(ITestResult testResult) throws IOException, MessagingException {
+    if(testResult.getStatus() == ITestResult.FAILURE){
+        String name = testResult.getName();
+        homePage.takeShot(name);
+    }else if(testResult.getStatus() == ITestResult.SUCCESS){
+        System.out.print("Test Passed");
+}

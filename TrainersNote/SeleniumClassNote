@@ -1,0 +1,260 @@
+Day1
+======================
+Introduction to Selenium - Libraries, packages and jars
+Library - A library is a collection of class definitions and its implementations.
+          The main benifits of creating library is simply code reuse.
+-How to create jar from the java project
+File --> Project Structure --> Artifact --> Click + sign --> Click JAR -->
+        Select "From modules with Dependencies.." --> Select you runner class in the Main Class
+        --> Set
+--Why do we need jar in our code?
+
+========================================
+
+Day2-UI Automation
+First Taste of Selenium
+================================================
+Recap:
+- Selenium ONLY work for Web Applications
+- Web app is any application that can be opened using browser (http://www.)
+
+Selenium - The Journey
+1) Selenium started as a record-and-play plugin tool know as Selenium IDE
+2) Selenium Remote control
+3) Selenium Standalone Server
+4) Selenium WebDriver
+
+What you need
+--------------
+1) Selenium Jar <seleniumhq.org>
+2) Browser binary (ChromeDriver, FirefoxDriver, etc)
+3) JUnit <https://junit.org/junit4/>
+4) TestNG
+
+Simple Selenium tests:
+---------------------
+1) Load browser (Chrome browser)
+2) Get page title
+3) get Url
+4) Close browser
+
+e.g
+public static void main(String[] args){
+
+System.setProperty("webdriver.chrome.driver", "ChromeDriver parth")
+WebDriver driver = new ChromeDriver();
+
+driver.url = ("")
+driver.getTitle();
+driver.getCurrentUrl();
+driver.close();
+
+}
+
+==============================
+Day3
+==========================
+Introduction to JUnit
+JUnit Annotations
+-------------
+2nd Part of JUnit - Comming Soon
+-----
+
+This follows Pre and Post conditions
+Pre-condition is called @Before - loading browser and entering Url
+Post-condition is called @After - closing browser
+
+==========================
+Day4
+===========
+
+Selectors in Selenium
+
+================================
+Day5
+=======
+Recap on JUnit4:
+
+  ==> Use login to explain this
+
+// Run once, e.g. Database connection, connection pool
+    @BeforeClass
+    public static void runOnceBeforeClass() {
+        System.out.println("@BeforeClass - runOnceBeforeClass");
+    }
+
+    // Run once, e.g close connection, cleanup
+    @AfterClass
+    public static void runOnceAfterClass() {
+        System.out.println("@AfterClass - runOnceAfterClass");
+    }
+
+    // Should rename to @BeforeTestMethod
+    // e.g. Creating an similar object and share for all @Test
+    @Before
+    public void runBeforeTestMethod() {
+        System.out.println("@Before - runBeforeTestMethod");
+    }
+
+    // Should rename to @AfterTestMethod
+    @After
+    public void runAfterTestMethod() {
+        System.out.println("@After - runAfterTestMethod");
+    }
+
+    @Test
+    public void test_method_1() {
+        System.out.println("@Test - test_method_1");
+    }
+
+    @Test
+    public void test_method_2() {
+        System.out.println("@Test - test_method_2");
+    }
+
+}
+===============================================
+Day6 -
+Introduction to Page Object Model (POM) structure in Selenium
+--------------------------------------
+
+Day6b
+
+Full POM project for registering into a website (eCommerce site)
+--> Create java project (PomProject)
+--> Organise the project into maven structure, using src/main/java/resources and src/main/test/resources
+--> Creat .properties file for storing static data
+--> Create Hooks class for pre and post tests
+
+=====================================================================
+
+
+Introduction to Maven
+- Why Maven?
+- How to download and install Maven <http://maven.apache.org/>
+- Set the Environment variables path (Create variables for %M2_HOME%\bin and %MAVEN_HOME%\bin)
+- check Maven is installed <mvn --version>
+- Creating Maven Project
+
+===========================================================
+
+Day7
+
+- Explain PoM in full using BasePage etc
+- Keyword driven (Use existing project to refactor to Full POM Concepts)
+- Selection from dropdown menu
+==========================================================================
+
+Day8
+
+Explain different Framework types
+- Keyword driven (Use existing project to refactor to Full POM Concepts)
+- Perform mouse hover action
+==========================================================================
+Day9
+
+//- Switch to active element.(Next Class)
+
+- Data driven
+          JUnit @DataProvider
+- Maven commands
+=====================================================
+Day10
+
+- Creating and running Maven project from command line
+- Advanced Selenium (Handling Alerts and multiple windows)
+
+========================================================
+Day11
+Handling Frames
+- Identifying iFrame
+  1) Right click on the suspected iFrame, if you find "This Frame" or "Reload Frame"
+  2) View Page Source and search for tag "iframe"
+
+Switching to iFrame
+ 1) By index  <driver.switchTo().frame(0)>
+ 2) By name or id   <driver.switchTo().frame("name or id")>
+ 3) By WebElement  <driver.switchTo().frame(WebElement)>
+
+ Selecting from Datepicker
+ Switching to Active windows
+ ============================================================================
+ Day12
+ Reading from excell
+ ===========================================================================
+
+ Day13
+ Introduction to TestNG
+      @Test
+      @BeforeMethod
+      @AfterMethod
+----------------------------------------------
+  PageFactory
+      @FindBy(id = "")
+      private WebElement loginElement = null;
+
+      public RegisterPage login(){
+        loginElement.click();
+        return PageFactory.initElements(driver, RegisterPage.class);
+      }
+-----------------------------------------------
+Running Test in Headless/Ghost mode
+1) HtmlUnitDriver: It is not supported by Selenium 3
+- Add the maven dependency to the pom file
+- Use te below codes
+
+else if(prop.getProperty("browser").toLowerCase().contains("html".toLowerCase())) {
+            if(prop.getProperty("ghost.browser").toLowerCase().contains("chrome".toLowerCase())){
+                driver = new HtmlUnitDriver(BrowserVersion.CHROME);
+                ((HtmlUnitDriver)driver).setJavascriptEnabled(true);
+            }else if(prop.getProperty("ghost.browser").toLowerCase().contains("ffirefox".toLowerCase())){
+                driver = new HtmlUnitDriver(BrowserVersion.FIREFOX_38);
+                ((HtmlUnitDriver)driver).setJavascriptEnabled(true);
+            }
+
+2) PhantomJS:
+-- download the binary from PhantomJS website
+-- add dependency to pom file
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>phantomjsdriver</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+-- Use the following codes
+DesiredCapabilities capabilities = new DesiredCapabilities();
+          capabilities.setJavascriptEnabled(true);
+        	capabilities.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "paths to PhantomJS binary");
+        	driver = new PhantomJSDriver(capabilities);
+
+3) chrome option (--headless):
+ChromeOptions option = new ChromeOptions();
+        option.addArguments("--headless");
+        option.addArguments("start-maximize");
+
+--------------------------------------
+  Synchronisation in Selenium WebDriver
+    Synchronization meaning: when two or more components involved to perform any action,
+    we expect these components to work together with the same pace.
+    The co-ordination between these components to run paralelly is called Synchronization.
+  In automation:
+  a) Application Under Test (AUT)
+  b) Selenium WebDriver
+  These two components move at different pace, hence the need to manage them.
+
+  Two Types:
+  1) Unconditional
+  2) Conditional
+
+===>      Thread.sleep(1000);
+
+===>      Implicit wait: This tells Selenium to poll DOM for the specified amount
+      of time
+      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+===>      Explicit wait: This tell Selenium to wait for a number of time until a
+      certain condition occurs.
+      WebElement myDynamicElement = (new WebDriverWait(driver, 10))
+      .until(ExpectedConditions.presenceOfElementLocated(By.id("myDynamicElement")));
+
+      WebDriverWait wait = new WebDriverWait(driver, 10);
+      WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("someid")));

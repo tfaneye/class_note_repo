@@ -1,0 +1,6 @@
+How to Install Eclipse on Ubuntu
+================================
+
+1) Open Terminal
+2) type: sudo snap install --classic eclipse
+3) Done
